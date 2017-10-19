@@ -34,7 +34,10 @@
 
 - (NSArray *)dataSource {
     if (!_dataSource) {
-        _dataSource = [[NSArray alloc]initWithObjects:@{@"title":@"翻转动画-网易云音乐启动效果",@"vcName":@"PageTranslateController"}, nil];
+        _dataSource = [[NSArray alloc]initWithObjects:
+  @{@"title":@"翻转动画-网易云音乐启动效果",@"vcName":@"PageTranslateController"},
+  @{@"title":@"手动翻页动画-红版报效果",@"vcName":@"PanGuestureTranslateController"},
+  @{@"title":@"滚动label",@"vcName":@"HorizonScrollontroller"}, nil];
     }
     return _dataSource;
 }

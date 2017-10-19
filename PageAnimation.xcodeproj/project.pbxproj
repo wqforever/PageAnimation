@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC6C65021F9884D10014EE39 /* HorizonScrollontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6C65011F9884D10014EE39 /* HorizonScrollontroller.m */; };
+		DC6C65051F9886270014EE39 /* UILabel+scroll.m in Sources */ = {isa = PBXBuildFile; fileRef = DC6C65041F9886270014EE39 /* UILabel+scroll.m */; };
 		DC7774681F5FCD6900945133 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7774671F5FCD6900945133 /* main.m */; };
 		DC77746B1F5FCD6900945133 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC77746A1F5FCD6900945133 /* AppDelegate.m */; };
 		DC77746E1F5FCD6900945133 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC77746D1F5FCD6900945133 /* ViewController.m */; };
@@ -18,6 +20,7 @@
 		DC77748F1F5FCD6A00945133 /* PageAnimationUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DC77748E1F5FCD6A00945133 /* PageAnimationUITests.m */; };
 		DC77749E1F5FCD8000945133 /* PageAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC77749D1F5FCD8000945133 /* PageAnimation.m */; };
 		DC7774A21F5FCDDC00945133 /* PageTranslateController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7774A11F5FCDDC00945133 /* PageTranslateController.m */; };
+		DC8119CD1F60E1D00027FDB3 /* PanGuestureTranslateController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC8119CC1F60E1D00027FDB3 /* PanGuestureTranslateController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC6C65001F9884D10014EE39 /* HorizonScrollontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizonScrollontroller.h; sourceTree = "<group>"; };
+		DC6C65011F9884D10014EE39 /* HorizonScrollontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizonScrollontroller.m; sourceTree = "<group>"; };
+		DC6C65031F9886270014EE39 /* UILabel+scroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+scroll.h"; sourceTree = "<group>"; };
+		DC6C65041F9886270014EE39 /* UILabel+scroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+scroll.m"; sourceTree = "<group>"; };
 		DC7774631F5FCD6900945133 /* PageAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PageAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7774671F5FCD6900945133 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC7774691F5FCD6900945133 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +67,8 @@
 		DC7774A01F5FCDDC00945133 /* PageTranslateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageTranslateController.h; sourceTree = "<group>"; };
 		DC7774A11F5FCDDC00945133 /* PageTranslateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageTranslateController.m; sourceTree = "<group>"; };
 		DC7774A41F5FE6E500945133 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DC8119CB1F60E1D00027FDB3 /* PanGuestureTranslateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanGuestureTranslateController.h; sourceTree = "<group>"; };
+		DC8119CC1F60E1D00027FDB3 /* PanGuestureTranslateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanGuestureTranslateController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +96,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC6C64FF1F98848D0014EE39 /* 横向滚动label */ = {
+			isa = PBXGroup;
+			children = (
+				DC6C65001F9884D10014EE39 /* HorizonScrollontroller.h */,
+				DC6C65011F9884D10014EE39 /* HorizonScrollontroller.m */,
+				DC6C65031F9886270014EE39 /* UILabel+scroll.h */,
+				DC6C65041F9886270014EE39 /* UILabel+scroll.m */,
+			);
+			name = "横向滚动label";
+			sourceTree = "<group>";
+		};
 		DC77745A1F5FCD6900945133 = {
 			isa = PBXGroup;
 			children = (
@@ -112,10 +132,12 @@
 			children = (
 				DC7774691F5FCD6900945133 /* AppDelegate.h */,
 				DC77746A1F5FCD6900945133 /* AppDelegate.m */,
+				DC7774A31F5FD26400945133 /* PageAnimation */,
 				DC77746C1F5FCD6900945133 /* ViewController.h */,
 				DC77746D1F5FCD6900945133 /* ViewController.m */,
 				DC7774A41F5FE6E500945133 /* PrefixHeader.pch */,
-				DC7774A31F5FD26400945133 /* PageAnimation */,
+				DC6C64FF1F98848D0014EE39 /* 横向滚动label */,
+				DC8119CA1F60E1910027FDB3 /* 手动翻页 */,
 				DC77749F1F5FCDA500945133 /* 翻转 */,
 				DC77746F1F5FCD6900945133 /* Main.storyboard */,
 				DC7774751F5FCD6900945133 /* Assets.xcassets */,
@@ -169,6 +191,15 @@
 				DC77749D1F5FCD8000945133 /* PageAnimation.m */,
 			);
 			name = PageAnimation;
+			sourceTree = "<group>";
+		};
+		DC8119CA1F60E1910027FDB3 /* 手动翻页 */ = {
+			isa = PBXGroup;
+			children = (
+				DC8119CB1F60E1D00027FDB3 /* PanGuestureTranslateController.h */,
+				DC8119CC1F60E1D00027FDB3 /* PanGuestureTranslateController.m */,
+			);
+			name = "手动翻页";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,9 +337,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC77746E1F5FCD6900945133 /* ViewController.m in Sources */,
+				DC6C65051F9886270014EE39 /* UILabel+scroll.m in Sources */,
 				DC77749E1F5FCD8000945133 /* PageAnimation.m in Sources */,
 				DC77746B1F5FCD6900945133 /* AppDelegate.m in Sources */,
 				DC7774681F5FCD6900945133 /* main.m in Sources */,
+				DC6C65021F9884D10014EE39 /* HorizonScrollontroller.m in Sources */,
+				DC8119CD1F60E1D00027FDB3 /* PanGuestureTranslateController.m in Sources */,
 				DC7774741F5FCD6900945133 /* PageAnimation.xcdatamodeld in Sources */,
 				DC7774A21F5FCDDC00945133 /* PageTranslateController.m in Sources */,
 			);
@@ -546,6 +580,7 @@
 				DC7774951F5FCD6A00945133 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC7774961F5FCD6A00945133 /* Build configuration list for PBXNativeTarget "PageAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +589,7 @@
 				DC7774981F5FCD6A00945133 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DC7774991F5FCD6A00945133 /* Build configuration list for PBXNativeTarget "PageAnimationUITests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +598,7 @@
 				DC77749B1F5FCD6A00945133 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

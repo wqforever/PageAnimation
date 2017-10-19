@@ -13,4 +13,5 @@
 
 + (void)convertViewFromView:(UIView *)fView toView:(UIView *)tView finished:(void(^)(BOOL isFnished))finished;
 
+- (void)addPanGuestureFromView:(UIView *)fView toView:(UIView *)tView;
 @end

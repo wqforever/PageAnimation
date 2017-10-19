@@ -10,6 +10,10 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
 
+@interface PageAnimation ()
+
+@end
+
 @implementation PageAnimation
 
 
@@ -110,6 +114,69 @@
     
     return transform;
     
+}
+
+//手滑动翻页
+- (UIImage *)screenShotImageFromView:(UIView *)view cutSize:(CGRect )rect {
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, [UIScreen mainScreen].scale);
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSaveGState(context);
+    
+    CGContextTranslateCTM(context, rect.origin.x, rect.origin.y);
+    
+    [view.layer renderInContext:context];
+    
+    CGContextRestoreGState(context);
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsGetCurrentContext();
+    
+    return newImage;
+}
+
+- (void)addPanGuestureFromView:(UIView *)fView toView:(UIView *)tView {
+    UIView *selfView = fView.superview;
+    
+    CGRect fFrame = fView.frame;
+    CGRect tFrame = tView.frame;
+    
+    UIImage *fLeftImage = [self screenShotImageFromView:fView cutSize:CGRectMake(0, 0, fFrame.size.width / 2, fFrame.size.height)];
+    UIImage *fRightImage = [self screenShotImageFromView:fView cutSize:CGRectMake(-fFrame.size.width / 2, 0, fFrame.size.width / 2, fFrame.size.height)];
+    UIImage *tLeftImage = [self screenShotImageFromView:tView cutSize:CGRectMake(0, 0, tFrame.size.width / 2, tFrame.size.height)];
+    UIImage *tRightImage = [self screenShotImageFromView:tView cutSize:CGRectMake(-tFrame.size.width / 2, 0, tFrame.size.width / 2, tFrame.size.height)];
+    
+    UIImageView *fImageView = [[UIImageView alloc]initWithFrame:CGRectMake(fFrame.origin.x, fFrame.origin.y, fFrame.size.width / 2, fFrame.size.height)];
+    fImageView.userInteractionEnabled = YES;
+    fImageView.image = fLeftImage;
+    [selfView addSubview:fImageView];
+    
+    UIImageView *tImageView = [[UIImageView alloc]initWithFrame:CGRectMake(tFrame.size.width / 2 + tFrame.origin.x, tFrame.origin.y, tFrame.size.width / 2, tFrame.size.height)];
+    tImageView.userInteractionEnabled = YES;
+    tImageView.image = tRightImage;
+    [selfView addSubview:tImageView];
+    
+    [fView removeFromSuperview];
+    [tView removeFromSuperview];
+    
+    UIImageView *removeImageView = [[UIImageView alloc]initWithFrame:CGRectMake(tFrame.size.width / 2 + tFrame.origin.x, tFrame.origin.y, tFrame.size.width / 2, tFrame.size.height)];
+    removeImageView.userInteractionEnabled = YES;
+    removeImageView.image = fRightImage;
+    [selfView addSubview:removeImageView];
+    
+    selfView.userInteractionEnabled = YES;
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(pageAnimation:)];
+    [selfView addGestureRecognizer:panGesture];
+}
+
+- (void)pageAnimation:(UIPanGestureRecognizer *)pan {
+    //NSLog(@"begin");
+    if (pan.state == UIGestureRecognizerStateChanged) {
+        CGPoint point = [pan translationInView:pan.view];
+        NSLog(@"x:%f y:%f",point.x,point.y);
+    }
 }
 
 
