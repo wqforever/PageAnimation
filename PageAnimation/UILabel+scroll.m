@@ -9,9 +9,9 @@
 #import "UILabel+scroll.h"
 
 static const void *scrollKey = @"scrollKey";
-static const void *kNewLabel = @"newlabel";
-static const void *kNewLabel2 = @"newlabel2";
 static const void *textStr = @"textStr";
+
+#define ScrollSpeed 0.01
 
 @interface UILabel ()
 /** <#描述#> */
@@ -84,12 +84,12 @@ static const void *textStr = @"textStr";
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
     animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(sWidth / 2 + sWidth + 20, frame.size.height / 2)];
     animation.toValue = [NSValue valueWithCGPoint:CGPointMake(-sWidth / 2 - 20, frame.size.height / 2)];
-    animation.duration = (sWidth * 2 + 40) * 0.01;
+    animation.duration = (sWidth * 2 + 40) * ScrollSpeed;
     animation.repeatCount = HUGE_VALF;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     animation.removedOnCompletion = NO;
     animation.fillMode = kCAFillModeForwards;
-    animation.timeOffset = (sWidth + 20) * 0.01;
+    animation.timeOffset = (sWidth + 20) * ScrollSpeed;
     [layer addAnimation:animation forKey:@"animation"];
 }
 
@@ -101,7 +101,7 @@ static const void *textStr = @"textStr";
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
     animation.fromValue = [NSValue valueWithCGPoint:CGPointMake(sWidth / 2 + sWidth + 20, frame.size.height / 2)];
     animation.toValue = [NSValue valueWithCGPoint:CGPointMake(-sWidth / 2 - 20, frame.size.height / 2)];
-    animation.duration = (sWidth * 2 + 40) * 0.01;
+    animation.duration = (sWidth * 2 + 40) * ScrollSpeed;
     animation.repeatCount = HUGE_VALF;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     animation.removedOnCompletion = NO;
