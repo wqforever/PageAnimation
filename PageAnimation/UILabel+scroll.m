@@ -15,10 +15,6 @@ static const void *textStr = @"textStr";
 
 @interface UILabel ()
 /** <#描述#> */
-@property (nonatomic, strong) UILabel *newLabel;
-/** <#描述#> */
-@property (nonatomic, strong) UILabel *newLabel2;
-/** <#描述#> */
 @property (nonatomic, copy) NSString *textContent;
 
 @end
@@ -36,22 +32,6 @@ static const void *textStr = @"textStr";
     }
     
     objc_setAssociatedObject(self, &scrollKey, [NSNumber numberWithBool:isCanScroll], OBJC_ASSOCIATION_ASSIGN);
-}
-
-- (UILabel *)newLabel {
-    return objc_getAssociatedObject(self, &kNewLabel);
-}
-
-- (void)setNewLabel:(UILabel *)newLabel {
-    objc_setAssociatedObject(self, &kNewLabel, newLabel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UILabel *)newLabel2 {
-    return objc_getAssociatedObject(self, &kNewLabel2);
-}
-
-- (void)setNewLabel2:(UILabel *)newLabel2 {
-    objc_setAssociatedObject(self, &kNewLabel2, newLabel2, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (NSString *)textContent {
@@ -75,7 +55,7 @@ static const void *textStr = @"textStr";
     newLabel.textColor = self.textColor;
     newLabel.textAlignment = self.textAlignment;
     [self addSubview:newLabel];
-    self.newLabel = newLabel;
+    
     
     UILabel *newLabel2 = [[UILabel alloc]initWithFrame:CGRectMake(sWidth + 20, 0, sWidth, frame.size.height)];
     newLabel2.text = self.text;
@@ -83,7 +63,7 @@ static const void *textStr = @"textStr";
     newLabel2.textColor = self.textColor;
     newLabel2.textAlignment = self.textAlignment;
     [self addSubview:newLabel2];
-    self.newLabel2 = newLabel2;
+    
     
     self.textContent = self.text;
     
