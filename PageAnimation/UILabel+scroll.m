@@ -43,11 +43,14 @@ static const void *textStr = @"textStr";
 }
 
 - (void)horizonScroll {
-    NSLog(@"横向滚动");
+    //NSLog(@"横向滚动");
     self.layer.masksToBounds = YES;
     
     CGRect frame = self.frame;
     float sWidth = [self.text boundingRectWithSize:CGSizeMake(MAXFLOAT, frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.font} context:nil].size.width + 1;
+    if (sWidth <= frame.size.width) {
+        return;
+    }
     
     UILabel *newLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, sWidth, frame.size.height)];
     newLabel.text = self.text;
