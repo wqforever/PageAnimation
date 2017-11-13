@@ -11,7 +11,7 @@
 
 @interface PageAnimation : NSObject
 
-+ (void)convertViewFromView:(UIView *)fView toView:(UIView *)tView finished:(void(^)(BOOL isFnished))finished;
++ (void)convertViewFromView:(UIView *)fView toView:(UIView *)tView finished:(void(^)(BOOL isFinished))finished;
 
 - (void)addPanGuestureFromView:(UIView *)fView toView:(UIView *)tView;
 @end

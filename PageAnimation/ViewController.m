@@ -31,7 +31,15 @@
     tableView.dataSource = self;
     [self.view addSubview:tableView];
     
+    int x = 10;
+    int y = x;
+    NSLog(@"x:%d y:%d",x ,y);
+    x = 20;
+    NSLog(@"x:%d y:%d",x ,y);
 }
+
+
+
 
 - (NSArray *)dataSource {
     if (!_dataSource) {
